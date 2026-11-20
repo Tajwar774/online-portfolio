@@ -90,6 +90,7 @@ const D = {
 };
 /* ===== END EDIT BLOCK ===== */
 
+const CV_B64 = "JVBERi0xLjQKJZOMi54gUmVwb3J0TGFiIEdlbmVyYXRlZCBQREYgZG9jdW1lbnQgKG9wZW5zb3VyY2UpCjEgMCBvYmoKPDwKL0YxIDIgMCBSIC9GMiAzIDAgUgo+PgplbmRvYmoKMiAwIG9iago8PAovQmFzZUZvbnQgL0hlbHZldGljYSAvRW5jb2RpbmcgL1dpbkFuc2lFbmNvZGluZyAvTmFtZSAvRjEgL1N1YnR5cGUgL1R5cGUxIC9UeXBlIC9Gb250Cj4+CmVuZG9iagozIDAgb2JqCjw8Ci9CYXNlRm9udCAvSGVsdmV0aWNhLUJvbGQgL0VuY29kaW5nIC9XaW5BbnNpRW5jb2RpbmcgL05hbWUgL0YyIC9TdWJ0eXBlIC9UeXBlMSAvVHlwZSAvRm9udAo+PgplbmRvYmoKNCAwIG9iago8PAovQ29udGVudHMgOCAwIFIgL01lZGlhQm94IFsgMCAwIDU5NS4yNzU2IDg0MS44ODk4IF0gL1BhcmVudCA3IDAgUiAvUmVzb3VyY2VzIDw8Ci9Gb250IDEgMCBSIC9Qcm9jU2V0IFsgL1BERiAvVGV4dCAvSW1hZ2VCIC9JbWFnZUMgL0ltYWdlSSBdCj4+IC9Sb3RhdGUgMCAvVHJhbnMgPDwKCj4+IAogIC9UeXBlIC9QYWdlCj4+CmVuZG9iago1IDAgb2JqCjw8Ci9QYWdlTW9kZSAvVXNlTm9uZSAvUGFnZXMgNyAwIFIgL1R5cGUgL0NhdGFsb2cKPj4KZW5kb2JqCjYgMCBvYmoKPDwKL0F1dGhvciAoVGFqd2FyIFdhc2lyIEtoYW4pIC9DcmVhdGlvbkRhdGUgKEQ6MjAyNjEwMjYxNjM4NDUrMDAnMDAnKSAvQ3JlYXRvciAoYW5vbnltb3VzKSAvS2V5d29yZHMgKCkgL01vZERhdGUgKEQ6MjAyNjEwMjYxNjM4NDUrMDAnMDAnKSAvUHJvZHVjZXIgKFJlcG9ydExhYiBQREYgTGlicmFyeSAtIFwob3BlbnNvdXJjZVwpKSAKICAvU3ViamVjdCAodW5zcGVjaWZpZWQpIC9UaXRsZSAoQ1YgLSBUYWp3YXIgV2FzaXIgS2hhbikgL1RyYXBwZWQgL0ZhbHNlCj4+CmVuZG9iago3IDAgb2JqCjw8Ci9Db3VudCAxIC9LaWRzIFsgNCAwIFIgXSAvVHlwZSAvUGFnZXMKPj4KZW5kb2JqCjggMCBvYmoKPDwKL0ZpbHRlciBbIC9BU0NJSTg1RGVjb2RlIC9GbGF0ZURlY29kZSBdIC9MZW5ndGggMTg3MAo+PgpzdHJlYW0KR2F1YFQ/JCJeaiY6RjVVUXEmTlgnbiZhOS4yWlFNM1g+T0k6QD5xT01jYUIpOHVrSzUnPDpLQGhsTUpiT0VmJCRZOl8qKks+W0NWR09KNFgiWFpGN2xMLVw1XDtdQGBbMDtqKmQxZS5gRSQ7Zkg/P0JkXVtjUj0lMFBpZ2k0VVZaR1lXXUgpcTxUWjdOc0dnbj8tPE1rRnBMKl5sMi5lL0JAY3AkZ1AtZ1psXnUtZm9gT20mKEYsTlouRF5RYDYkTz4iWlwhQjhwailVTyY5WVMzNCxDVTxvTmk6KC1VKVxhJXBbIjRsdTM+IV9sSFBBZTVuZDRDLyxQPyJkXkwqRUFGNiw+YDdbTiVyTD8uLGhvcyNEOU1RKGxxYDxkLVQlKG1ASEguN1A+Wz4nSEgxNGdAcmRTQFl0LiZIalNQLCRhSFtPYiQ0ZDxwZHFTR0VzN1VXMzRrayhlYVNZWU9WV2REMmVjaWtiVUQzcSROTVI7bi85RSJgJkEvLXRJZUY4aFxhUXRXUD4kazgiYzVkPCdLTTdzIWNwc1wiZEtQclxdZEsmazMqWyssWU1lKFxpZjxOXSJaXCUrQjI/OTY8R2AtY1BIMEs7V05hJickM09GPDwmcD4hVz5tJC80JSRiJFpwdFBqYzw4TzVjJGVLZVxyX2xCZE80NDRSXVIiKEFMOmMoXEk2Z1tLPjJJZDJyc1koSztnYWBOIyJWZDYjO1U6TWROa1AsKGNTPmQ3UnMvTGE3KiM8SCpDWyNWZS5kQk0oQW9FUj4vZHNfOGskJEBpaktRKms5OT1PIl5sRiE7NkolNCFbM3NVaGVeIi4nX0s6QFlBOWkhaTk0U3NlJz06XVg1akhRIVUoJWJRIS9HIiolSE8uUUlxMTJAW2tUJV50WV1ubkJwJzA/RXAzPT8jXEQtXj1rcShKc2JbRicpI3RhKjozRCRWVCM6dWxlZik9MEosVkhXNFUhNDQ9ai9rcUlUMVlRTWViKCw2MVpCSFJwLWVNKGFqbkIlZWpkKjU0KCR0IzNDLVx0QTovXU9AQE0qPnI5WU4jYVxGcTVEUE1lXk08cWJGU1pmSVtIbThnPD9WcyczSGQzK0FCS0J1TCUhUl10XThrdFVeVUYnQSQyVkMoXGpsLiEpLTlHT08oc2A3YXQrNDpLXGZLQ1FQKWE+WDV0WT9pPS1SNWAyJE0jTGI+WiE5WWc2Xl9bXGcvcSlKcVtySmpTTyNWSiVWZmteUGpVS1lZNmlTQVlWPGNfZ2BlJGxnKFdhWWMhLnRJVCVxaj4rVE9QJGAqbSdVYk45NFRARihlLTZUXC8pLDZKTVZuU1BaRmk0KjxxKTllIXBxQSUhdDZJXGluJHVkMSdSdTA0cFNQJjZjb1IjUSpaQTc0T1VuOjFiM1lacTRDQzE3RkVvRC1DUXBQIydHZSdfXUQpIUAoMlFGWW1nWF1lQm9FRUVvaz1bIlMmLjM9J1pBbkwrRUAvdFVcdWhgLmpRTztGRU47MydCZlN1X1AsVHI7Pk1KZCV0Z2x0O2dtYz42bEhKSG85YTFFZVhjWCdkXGtsQGw/X1RdNm44UiVQKEgsY3IiZFBRTlwmOHNXOmBfcEpgL1kiaVlyNSkpQmE3aFRFVEdTN1lXYERDKEtBQUMoIzVNPFI3OUtgSi0rKDI6K28iYzEzRWFgVyVrZEIvYGxNQkFmNmFtYSVtZm4qZlNSY2M+biRjLDtOSU9OL2o7MXJjOkdxISE0XlBgMnFAYGE6WTMrO2NnRl9zaXBDMy89MFdJQlZCM3IsRnM0MTAhbGwhRiwoMWopNEVWWlVRJFMxPmxeUy0hcWh0YCkzWXNTQFltcTUrIjhMSDQ4YWVaIjFyZVNwRT5AM14xXjg4OTFma2RmOlYhOjovSGoqZkU5L11mJUpnKydhOCk7NDBYYzoxVkdZOWY/SCsqSTVccGUnSVImITglXHJDYmxnWVl0V2kwSkdJQihyKUw6XzInazc9P1lmNE1zImBRdTpaKjkwSmwjKHJcSXJxNDhZJkojZT5EZ0FkY2RESUMyQCpxblE9XENSLUVnb2txMiV0Z2g0KWFhInNxcWVRXGNmcUcwZ05jRlpIdTFjPnJOPk81bD83RzVlZVs4UE8tcF41JGdGU0JwYkJWZU0vaF89cVBBPiFeYTVVRnIwSEFML1pSby4zPl1qYyYvQXFhTz8qT04vblYvQldKRjJIcEErOnJJKFFMZlVlXTkjYFEoIz8nOSklSlxPYVo9cnIsT2VmcUdGYkYtITldLSI9VnRYP191UTFTOCxDS29DLjhPVzFJMzMsY1hDQToyNzs2SG86aU1dR0VqYCk4LSdrSERmPGE3OTBTY1gsRXIzND51MVhKU2dCYVo3Pzc1Y1t0UFlAQVJkP3NbOloxQzlJLCdQQ0JVUi0xP1c4Nzk8MztsWzp1PGllYzYkXTMzU1lnUUtIRUp1LShOKCJhRT9mMmdJclcyYVppSkl+PmVuZHN0cmVhbQplbmRvYmoKeHJlZgowIDkKMDAwMDAwMDAwMCA2NTUzNSBmIAowMDAwMDAwMDYxIDAwMDAwIG4gCjAwMDAwMDAxMDIgMDAwMDAgbiAKMDAwMDAwMDIwOSAwMDAwMCBuIAowMDAwMDAwMzIxIDAwMDAwIG4gCjAwMDAwMDA1MjQgMDAwMDAgbiAKMDAwMDAwMDU5MiAwMDAwMCBuIAowMDAwMDAwODc1IDAwMDAwIG4gCjAwMDAwMDA5MzQgMDAwMDAgbiAKdHJhaWxlcgo8PAovSUQgCls8ZWI3MDcyOWU2YmEzZGE1MDhkMzMzZWU5MWZiZmEwNDc+PGViNzA3MjllNmJhM2RhNTA4ZDMzM2VlOTFmYmZhMDQ3Pl0KJSBSZXBvcnRMYWIgZ2VuZXJhdGVkIFBERiBkb2N1bWVudCAtLSBkaWdlc3QgKG9wZW5zb3VyY2UpCgovSW5mbyA2IDAgUgovUm9vdCA1IDAgUgovU2l6ZSA5Cj4+CnN0YXJ0eHJlZgoyODk1CiUlRU9GCg==";
 const $ = s => document.querySelector(s);
 const esc = t => String(t).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const li = a => `<ul class="tags">${a.map(x => `<li class="tag">${esc(x)}</li>`).join("")}</ul>`;
@@ -104,7 +105,7 @@ const pages = {
     <section class="sec"><h2>About myself</h2>${D.about.map(p=>`<p>${esc(p)}</p>`).join("")}</section>
     <section class="sec"><h2>Achievements</h2><ul>${D.achievements.map(a=>`<li>${esc(a)}</li>`).join("")}</ul></section>`,
   resume: () => `<h2>Resume</h2>
-    ${D.resumeFile ? `<p><a class="btn" href="${esc(D.resumeFile)}">Download CV (PDF)</a></p>` : `<p class="sub">Add a link to your CV in <code>resumeFile</code>.</p>`}
+    <p><button class="btn" id="dlcv" type="button">Download CV (PDF)</button></p>
     <h3>Education</h3>${rows(D.education)}<h3>Experience</h3>${rows(D.experience)}
     <h3>Relevant courses</h3>${li(D.courses)}
     <div class="grid sec"><div class="card"><h3>Technical skills</h3>${li(D.tech)}</div><div class="card"><h3>Transferable skills</h3>${li(D.soft)}</div></div>`,
@@ -133,6 +134,17 @@ function render(k){
 $("#foot").textContent = "© 2026 " + D.name;
 addEventListener("hashchange", () => render());
 document.addEventListener("click", e => {
+  if (e.target.closest && e.target.closest("#dlcv")) {
+    try {
+      const u8 = Uint8Array.from(atob(CV_B64), c => c.charCodeAt(0));
+      const url = URL.createObjectURL(new Blob([u8], {type: "application/pdf"}));
+      const l = document.createElement("a");
+      l.href = url; l.download = "CV_Tajwar_Wasir_Khan.pdf";
+      document.body.appendChild(l); l.click(); l.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 4000);
+    } catch (x) { window.open("CV_Tajwar_Wasir_Khan.pdf", "_blank"); }
+    return;
+  }
   const a = e.target.closest && e.target.closest('a[href^="#"]');
   if (!a) return;
   e.preventDefault();
